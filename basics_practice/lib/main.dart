@@ -15,35 +15,93 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Basics'),
+      home: MyHomePage(title: 'Flutter Basics'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget{
 
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+
+  List<Product> products = [
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+    Product(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+    Product(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+    Product(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Learning Flutter Basics")),
-      body: SingleChildScrollView(
-        child: Column(
-        children: [
-          ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
-          ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
-          ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
-        ],
-      ),
+      body:
+    //========================================
+    //3- tirdly implementing by listview, and data is fteched by itself via Product-model-class   
+      ListView.builder(
+        itemCount: products.length,
+        itemBuilder: (context,index){
+          return ProductBox(
+            image: products[index].image, 
+            title: products[index].title, 
+            desc: products[index].desc, 
+            price: products[index].price
+            );
+        },
       )
+    //========================================
+    //2- secondly implementing by listview, but data was fteched by ourself   
+        //  ListView(children: [
+        //   ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+        //   ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+        //   ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+        //   ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+        //   ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+        //   ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+        //   ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+        //   ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+        //   ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+        //   ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+        //   ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+        //   ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+        //  ],) 
+        
+    //========================================
+    //1- firstly implementing by adding product one by one by ourself
+      // Column(
+      //   children: [
+      //     ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+      //     ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+      //     ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+      //   ],
+      // ),
+      
     );
   }
 
 }
 
+//product-box class
 class ProductBox extends StatelessWidget{
   
   ProductBox({
@@ -93,5 +151,23 @@ class ProductBox extends StatelessWidget{
       ),
     );
   }
+
+}
+
+//product-model class
+class Product {
+
+  Product({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.desc,
+    required this.price
+  });
+
+  final String image;
+  final String title;
+  final String desc;
+  final String price;
 
 }

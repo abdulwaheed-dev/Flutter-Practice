@@ -31,9 +31,21 @@ class MyHomePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: const Text("Learning Flutter Basics")),
       body: Center(
-      child: //Image.asset("assets/images/jaun.jpg")
-      //Image.asset("assets/images/naam.jpg",fit: BoxFit.fill)
-      Image.network("https://i.pinimg.com/originals/13/33/c3/1333c30b645768cf780910921007704c.png",fit: BoxFit.fill)
+      child:
+      //Text-Button
+      // TextButton(child: const Text("Click Me!", style: TextStyle(fontSize: 18)),
+      // onPressed: (){
+      //   debugPrint("Button is pressed.");
+      // },)
+      //===============================
+      //Icon-Button
+      IconButton(
+        icon: Image.asset("assets/images/done.jpg"),
+        iconSize: 50,
+        onPressed: (){
+          debugPrint("Icon-Button is pressed.");
+        },
+      )
     ),
     );
   }

@@ -28,8 +28,14 @@ class MyHomePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Hello World.!", style: TextStyle(color: Colors.green),),
+    return Scaffold(
+      appBar: AppBar(title: const Text("Learning Flutter Basics")),
+      body: const Center(
+      child:Text.rich(TextSpan(children: [
+        TextSpan(text: "Don't have an account?", style: TextStyle(fontSize: 24)),
+        TextSpan(text: " Sign up Here!", style: TextStyle(fontSize: 24, color: Colors.blue))
+      ])) 
+    ),
     );
   }
 

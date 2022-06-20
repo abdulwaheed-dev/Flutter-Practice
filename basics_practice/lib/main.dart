@@ -31,7 +31,9 @@ class MyHomePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: const Text("Learning Flutter Basics")),
       body: Center(
-      child: Image.asset("assets/images/jaun.jpg")
+      child: //Image.asset("assets/images/jaun.jpg")
+      //Image.asset("assets/images/naam.jpg",fit: BoxFit.fill)
+      Image.network("https://i.pinimg.com/originals/13/33/c3/1333c30b645768cf780910921007704c.png",fit: BoxFit.fill)
     ),
     );
   }

@@ -30,29 +30,67 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Learning Flutter Basics")),
-      body: const Center(
-      child:
-      //Text-Button
-      // TextButton(child: const Text("Click Me!", style: TextStyle(fontSize: 18)),
-      // onPressed: (){
-      //   debugPrint("Button is pressed.");
-      // },)
-      //===============================
-      //Icon-Button
-      // IconButton(
-      //   icon: Image.asset("assets/images/done.jpg"),
-      //   iconSize: 50,
-      //   onPressed: (){
-      //     debugPrint("Icon-Button is pressed.");
-      //   },
-      // )
+      body: SingleChildScrollView(
+        child: Column(
+        children: [
+          ProductBox(image: "jaun.jpg",title: "Jaun Eliya", desc: "Poet", price: "1234",),
+          ProductBox(image: "done.jpg",title: "Done Icon", desc: "Vector Icon", price: "123",),
+          ProductBox(image: "naam.jpg",title: "Jaun Eliya Poetry", desc: "Poetry", price: "12",),
+        ],
+      ),
+      )
+    );
+  }
 
-      //=================================
-      //Icons
-      Icon(Icons.alarm_on_sharp,
-      size: 100,)
+}
 
-    ),
+class ProductBox extends StatelessWidget{
+  
+  ProductBox({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.desc,
+    required this.price
+  });
+
+  final String image;
+  final String title;
+  final String desc;
+  final String price;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      child: Card( 
+        child: Padding(padding: const EdgeInsets.all(8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [Image.asset("assets/images/$image"),
+          Padding(padding: const EdgeInsets.fromLTRB(20, 0, 0, 0), 
+          child: 
+          Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          Text(
+            title,
+            style: const TextStyle(fontSize: 20),
+          ),
+          Text(
+            desc,
+            style: const TextStyle(fontSize: 20),
+          ),
+          Text(
+            price.toString(),
+            style: const TextStyle(fontSize: 20),
+          ),
+        ],)
+           ,)
+        
+        ],
+        ),
+        )
+      ),
     );
   }
 

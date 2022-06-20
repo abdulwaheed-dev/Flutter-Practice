@@ -30,7 +30,7 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Learning Flutter Basics")),
-      body: Center(
+      body: const Center(
       child:
       //Text-Button
       // TextButton(child: const Text("Click Me!", style: TextStyle(fontSize: 18)),
@@ -39,13 +39,19 @@ class MyHomePage extends StatelessWidget{
       // },)
       //===============================
       //Icon-Button
-      IconButton(
-        icon: Image.asset("assets/images/done.jpg"),
-        iconSize: 50,
-        onPressed: (){
-          debugPrint("Icon-Button is pressed.");
-        },
-      )
+      // IconButton(
+      //   icon: Image.asset("assets/images/done.jpg"),
+      //   iconSize: 50,
+      //   onPressed: (){
+      //     debugPrint("Icon-Button is pressed.");
+      //   },
+      // )
+
+      //=================================
+      //Icons
+      Icon(Icons.alarm_on_sharp,
+      size: 100,)
+
     ),
     );
   }

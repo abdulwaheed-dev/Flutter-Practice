@@ -30,11 +30,8 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Learning Flutter Basics")),
-      body: const Center(
-      child:Text.rich(TextSpan(children: [
-        TextSpan(text: "Don't have an account?", style: TextStyle(fontSize: 24)),
-        TextSpan(text: " Sign up Here!", style: TextStyle(fontSize: 24, color: Colors.blue))
-      ])) 
+      body: Center(
+      child: Image.asset("assets/images/jaun.jpg")
     ),
     );
   }

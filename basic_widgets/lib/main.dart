@@ -31,27 +31,13 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Basic Widgets in Flutter"),),
       body: 
-        Column(
+        Row(
           children: [
-            const Text('Select Languages You Speek:   ', style: TextStyle(fontSize: 20),),
-            
-            CheckboxListTile(
-              title: const Text("Sindhi"),
-              value: true,
-              onChanged: (newValue) {  },
-            ),
+              const Text('Are your Married', style: TextStyle(fontSize: 20),),
+              Switch(value: false, onChanged:(newValue){ }),
 
-            CheckboxListTile(
-              title: const Text("Farsi"),
-              value: false,
-              onChanged: (newValue) {  },
-            ),
-
-            CheckboxListTile(
-              title: const Text("Urdu"),
-              value: true,
-              onChanged: (newValue) {  },
-            ),
+              const Text('Are your Single', style: TextStyle(fontSize: 20),),
+              Switch(value: true, onChanged:(newValue){ }),
 
           ],
         )

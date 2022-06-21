@@ -31,39 +31,30 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Basic Widgets in Flutter"),),
       body: 
-        Row(
+        Column(
           children: [
-          const Text('Select Your Gender:   ', style: TextStyle(fontSize: 20),),  
-          const Text('Male', style: TextStyle(fontSize: 20),
+            const Text('Select Languages You Speek:   ', style: TextStyle(fontSize: 20),),
+            
+            CheckboxListTile(
+              title: const Text("Sindhi"),
+              value: true,
+              onChanged: (newValue) {  },
             ),
-          Radio(
-          value: 2,
-          groupValue: id,
-          onChanged: (val) {
-            // setState(() {
-            //   predominant = 'recessiva_bb';
-            //   id = 2;
-            // });
-          },
-        ),
-        // more widgets ...
 
-        const Text('Female', style: TextStyle(fontSize: 20),
+            CheckboxListTile(
+              title: const Text("Farsi"),
+              value: false,
+              onChanged: (newValue) {  },
             ),
-          Radio(
-          value: 2,
-          groupValue: id,
-          onChanged: (val) {
-            // setState(() {
-            //   predominant = 'recessiva_bb';
-            //   id = 2;
-            // });
-          },
-        ),
 
-        ]
-      ),
-      
+            CheckboxListTile(
+              title: const Text("Urdu"),
+              value: true,
+              onChanged: (newValue) {  },
+            ),
+
+          ],
+        )
     );
   }
 

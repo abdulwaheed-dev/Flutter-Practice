@@ -61,12 +61,17 @@ class MyHomePage extends StatelessWidget{
       ListView.builder(
         itemCount: products.length,
         itemBuilder: (context,index){
-          return ProductBox(
+          return InkWell  //replace with InkWell or GestureDetector (both perfroms the same work of even handling, inkwell is different as it creates a hand foucs cursor for event handling and highlights when that widget is clicked)
+          (child: ProductBox(
             image: products[index].image, 
             title: products[index].title, 
             desc: products[index].desc, 
             price: products[index].price
-            );
+            ),
+            onTap: (){
+              debugPrint("Row Clicked : " + (index+1).toString());
+            },
+          );
         },
       )
     //========================================

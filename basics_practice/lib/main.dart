@@ -106,21 +106,79 @@ class MyHomePage extends StatelessWidget{
   }
   
   void _showDialog(BuildContext context){
-    AlertDialog alert = AlertDialog(
-      title: Text("Sample TitleText"),
-      content: Text("Sample Content Text"),
-      actions: [
-        TextButton(onPressed: (){}, child: Text("OK"),),
-        TextButton(onPressed: (){}, child: Text("Cancel")),
+    // AlertDialog alert = AlertDialog(
+    //   title: Text("Sample TitleText"),
+    //   content: Text("Sample Content Text"),
+    //   actions: [
+    //     TextButton(onPressed: (){}, child: Text("OK"),),
+    //     TextButton(onPressed: (){}, child: Text("Cancel")),
+    //   ],
+    // );
+
+    SimpleDialog sDialog = SimpleDialog(
+      title: const Text("Set Backup Account"),
+      children: [
+        SimpleDialogItem(icon:Icons.account_circle, color:Colors.orange, text:'user01@gmail.com',),
+
+        SimpleDialogItem(icon:Icons.account_circle, color:Colors.green, text:'user02@gmail.com',),
+
+        SimpleDialogItem(icon:Icons.add_circle, color:Colors.grey, text:'Add Account',),
       ],
+      
+      // onPressed:(){
+      //   Navigator.pop(context,'user00@gmail.com');
+      // },
+
     );
+
     showDialog(context: context, builder: (context){
-      return alert;
+      return sDialog;
     }
+    );
+
+    }
+  }
+  
+  class SimpleDialogItem extends StatelessWidget{
+    SimpleDialogItem({
+       required this.icon,
+       required this.color,
+       required this.text
+    });
+
+    final IconData icon;
+    final Color color;
+    final String text;
+
+    @override
+  Widget build(BuildContext context) {
+    return SimpleDialogOption(
+      //height: 100,
+      child: Card( 
+        child: Padding(padding: const EdgeInsets.all(8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [Icon(icon,color: color,size: 50,),
+          Padding(padding: const EdgeInsets.fromLTRB(20, 0, 0, 0), 
+          child: 
+          Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          Text(
+            text,
+            style: const TextStyle(fontSize: 20),
+          ),
+        ],)
+           ,)
+        ],
+        ),
+        )
+      ),
     );
   }
 
-}
+    
+  }
 
 //product-box class
 class ProductBox extends StatelessWidget{

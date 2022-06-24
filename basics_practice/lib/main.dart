@@ -20,6 +20,23 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Screen2 extends StatelessWidget{
+  const Screen2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Screen-2"),
+      ),
+      body: const Center(
+        child: Text("This is Screen-2",style: TextStyle(fontSize: 20),),
+      ),
+    );
+  }
+
+}
+
 class MyHomePage extends StatelessWidget{
 
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -70,7 +87,8 @@ class MyHomePage extends StatelessWidget{
             ),
             onTap: (){
               //debugPrint("Row Clicked : " + (index+1).toString());
-              _showDialog(context);
+              //_showDialog(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> Screen2()));
             },
           );
         },
@@ -106,14 +124,18 @@ class MyHomePage extends StatelessWidget{
   }
   
   void _showDialog(BuildContext context){
-    // AlertDialog alert = AlertDialog(
-    //   title: Text("Sample TitleText"),
-    //   content: Text("Sample Content Text"),
-    //   actions: [
-    //     TextButton(onPressed: (){}, child: Text("OK"),),
-    //     TextButton(onPressed: (){}, child: Text("Cancel")),
-    //   ],
-    // );
+    AlertDialog alert = AlertDialog(
+      title: Text("Sample TitleText"),
+      content: Text("Sample Content Text"),
+      actions: [
+        TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: Text("OK"),),
+        TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: Text("Cancel")),
+      ],
+    );
 
     SimpleDialog sDialog = SimpleDialog(
       title: const Text("Set Backup Account"),
@@ -132,7 +154,7 @@ class MyHomePage extends StatelessWidget{
     );
 
     showDialog(context: context, builder: (context){
-      return sDialog;
+      return alert;
     }
     );
 

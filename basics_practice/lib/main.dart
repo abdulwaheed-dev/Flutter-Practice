@@ -69,7 +69,8 @@ class MyHomePage extends StatelessWidget{
             price: products[index].price
             ),
             onTap: (){
-              debugPrint("Row Clicked : " + (index+1).toString());
+              //debugPrint("Row Clicked : " + (index+1).toString());
+              _showDialog(context);
             },
           );
         },
@@ -101,6 +102,21 @@ class MyHomePage extends StatelessWidget{
       //   ],
       // ),
       
+    );
+  }
+  
+  void _showDialog(BuildContext context){
+    AlertDialog alert = AlertDialog(
+      title: Text("Sample TitleText"),
+      content: Text("Sample Content Text"),
+      actions: [
+        TextButton(onPressed: (){}, child: Text("OK"),),
+        TextButton(onPressed: (){}, child: Text("Cancel")),
+      ],
+    );
+    showDialog(context: context, builder: (context){
+      return alert;
+    }
     );
   }
 
@@ -149,13 +165,13 @@ class ProductBox extends StatelessWidget{
           ),
         ],)
            ,)
-        
         ],
         ),
         )
       ),
     );
   }
+  
 
 }
 

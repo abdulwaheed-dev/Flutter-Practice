@@ -47,22 +47,45 @@ class MyHomePage extends StatelessWidget {
           //obscureText: true, //use this to make textField as passwordField.
           style: const TextStyle(fontSize: 20),
           textAlign: TextAlign.center, //change textAlignment
-          maxLines: null, //change to null to make it dynamic
+          //maxLines: null, //change to null to make it dynamic
           //maxLength: 20, //change the maximun input length
           decoration: const InputDecoration(
             //icon: Icon(Icons.search), //icon at starting of textfiled
-            prefixIcon: Icon(Icons.search), //icon inside the textfiled
+            //prefixIcon: Icon(Icons.search), //icon inside the textfiled
             //suffixIcon: Icon(Icons.search), //icon at the end of textfiled
             border:OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
-            labelText: "Some Text Here"
+            labelText: "Username"
           ),
           ),
-          TextButton(onPressed: (){debugPrint("Username: ${userController.text}");}, child: const Text("Click Me"),)
+
+          TextButton(
+            onPressed: ()
+              {
+                //if(userController.text == "Waheed"){
+                  //debugPrint("Username: ${userController.text}");
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> welcomeScreen(username: userController.text)));
+                //}
+              }, 
+            child: const Text("Login"),)
           ],
         ),
       ),
       );
   }
 
-  
+}
+
+class welcomeScreen extends StatelessWidget{
+    const welcomeScreen({Key? key, required this.username}) : super(key: key);
+    final String username;
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+    appBar: AppBar(title: const Text("Login Sucessful"),),
+    body: Center(
+      child: Text("Welcome Mr. $username"),
+    ),
+   );
+  }
+
 }

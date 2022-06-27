@@ -15,15 +15,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+  String username="";
+
+  TextEditingController userController = TextEditingController();
   
   @override
   Widget build(BuildContext context) {
@@ -32,14 +35,21 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Input Widgets"),
       ),
       body: 
-      const Center(
-        child: TextField(
+      Center(
+        child: Column(
+          children: [
+            TextField(
+          // onChanged: (value){
+          //   debugPrint("Text = "+value);
+          //   username = value;
+          // },
+          controller: userController,
           //obscureText: true, //use this to make textField as passwordField.
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
           textAlign: TextAlign.center, //change textAlignment
           maxLines: null, //change to null to make it dynamic
           //maxLength: 20, //change the maximun input length
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             //icon: Icon(Icons.search), //icon at starting of textfiled
             prefixIcon: Icon(Icons.search), //icon inside the textfiled
             //suffixIcon: Icon(Icons.search), //icon at the end of textfiled
@@ -47,6 +57,9 @@ class MyHomePage extends StatelessWidget {
             labelText: "Some Text Here"
           ),
           ),
+          TextButton(onPressed: (){debugPrint("Username: ${userController.text}");}, child: const Text("Click Me"),)
+          ],
+        ),
       ),
       );
   }

@@ -31,10 +31,24 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Input Widgets"),
       ),
-      body: const Center(
-        child: TextField(),
-      ) ,
-    );
+      body: 
+      const Center(
+        child: TextField(
+          //obscureText: true, //use this to make textField as passwordField.
+          style: TextStyle(fontSize: 20),
+          textAlign: TextAlign.center, //change textAlignment
+          maxLines: null, //change to null to make it dynamic
+          //maxLength: 20, //change the maximun input length
+          decoration: InputDecoration(
+            //icon: Icon(Icons.search), //icon at starting of textfiled
+            prefixIcon: Icon(Icons.search), //icon inside the textfiled
+            //suffixIcon: Icon(Icons.search), //icon at the end of textfiled
+            border:OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+            labelText: "Some Text Here"
+          ),
+          ),
+      ),
+      );
   }
 
   

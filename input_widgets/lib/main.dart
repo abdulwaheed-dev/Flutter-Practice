@@ -37,6 +37,7 @@ class MyHomePage extends StatelessWidget {
       body: 
       Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
           // onChanged: (value){
@@ -83,7 +84,7 @@ class welcomeScreen extends StatelessWidget{
    return Scaffold(
     appBar: AppBar(title: const Text("Login Sucessful"),),
     body: Center(
-      child: Text("Welcome Mr. $username"),
+      child: Text("Welcome Mr. $username",),
     ),
    );
   }

@@ -59,6 +59,19 @@ class MyHomePage extends StatelessWidget {
           ),
           ),
 
+          const TextField(
+//          controller: userController,
+          obscureText: true, //use this to make textField as passwordField.
+          style: TextStyle(fontSize: 20),
+          textAlign: TextAlign.center, //change textAlignment
+          //maxLines: null, //change to null to make it dynamic
+          //maxLength: 20, //change the maximun input length
+          decoration: InputDecoration(
+            border:OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+            labelText: "Username"
+          ),
+          ),
+
           TextButton(
             onPressed: ()
               {

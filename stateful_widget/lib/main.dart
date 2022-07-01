@@ -49,7 +49,7 @@ class MyHomePageState extends State<MyHomePage> {
               setState(() {
                 counter++;                
               });
-              counter2+=10;
+              counter2+=0;
 
               debugPrint("Counter : $counter");
             },

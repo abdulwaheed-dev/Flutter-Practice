@@ -15,26 +15,45 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.deepOrange,
           title:const Text("Exam Practice")
         ),
-        body: 
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body:
+        Stack(
           children: [
-            Text("Icons in Column", style: TextStyle(fontSize: 20),),
-            Icon(Icons.abc),
-            Icon(Icons.ac_unit),
-            Icon(Icons.alarm),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-              Text("Icons in Row", style: TextStyle(fontSize: 20)),
-              Icon(Icons.mail),
-              Icon(Icons.add),
-              Icon(Icons.message)
-            ],
-            ),
+            Image.network('https://stall.pk/wp-content/uploads/2022/03/iphone-5s-Pakistan-stall.pk_.png'),
+            Positioned(
+              child: 
+                ElevatedButton(
+                  onPressed: (){}, 
+                  child: Text("Buy iPhone 5s"),
+                ),
+                top: 420,
+                left: 240,
+              ),
+            
           ],
-        ),
+        )
+
+        //========================== 
+        // Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: [
+        //     Text("Icons in Column", style: TextStyle(fontSize: 20),),
+        //     Icon(Icons.abc),
+        //     Icon(Icons.ac_unit),
+        //     Icon(Icons.alarm),
+        //     Row(
+        //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //       crossAxisAlignment: CrossAxisAlignment.center,
+        //       children: const [
+        //       Text("Icons in Row", style: TextStyle(fontSize: 20)),
+        //       Icon(Icons.mail),
+        //       Icon(Icons.add),
+        //       Icon(Icons.message)
+        //     ],
+        //     ),
+        //   ],
+        // ),
+
+        //========================
         // Container(
         //   child: const Text("Some Text here.."),
         //   margin: const EdgeInsets.all(100),
@@ -43,6 +62,7 @@ class MyApp extends StatelessWidget {
         //   height: 100,
         //   width: 100,
         // )
+
       ),
     );
   }

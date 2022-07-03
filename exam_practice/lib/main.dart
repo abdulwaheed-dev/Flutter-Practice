@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 void main() {
   runApp(const MyApp());
@@ -26,62 +27,75 @@ class MyApp extends StatelessWidget {
         //   child: Center(child: Text("Hello from Drawer",style: TextStyle(fontSize: 20),),),
         // ),
 
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          addAutomaticKeepAlives: false,
-          children: [
-            Container(
-              color: Colors.red,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.blue,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.orange,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.black,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.green,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.red,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.blue,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.orange,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.black,
-              width: 200,
-              height: 200,
-            ),
-            Container(
-              color: Colors.green,
-              width: 200,
-              height: 200,
-            )
-          ],
-        ),
+        body: 
+          ListView.builder(
+            itemBuilder: (_,index){
+              return Container(
+                color: randomColor(),
+                width: 100,
+                height: 100,
+              );
+          },
+          )
+
+        //======================================
+        // ListView(
+        //   scrollDirection: Axis.vertical,
+        //   addAutomaticKeepAlives: false,
+        //   children: [
+        //     Container(
+        //       color: Colors.red,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.blue,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.orange,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.black,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.green,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.red,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.blue,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.orange,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.black,
+        //       width: 200,
+        //       height: 200,
+        //     ),
+        //     Container(
+        //       color: Colors.green,
+        //       width: 200,
+        //       height: 200,
+        //     )
+        //   ],
+        // ),
+
         //====================================
         // Stack(
         //   children: [
@@ -132,5 +146,9 @@ class MyApp extends StatelessWidget {
 
       ),
     );
+  }
+  
+  randomColor() {
+    return Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
   }
 }

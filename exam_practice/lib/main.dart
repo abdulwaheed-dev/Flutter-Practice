@@ -20,8 +20,11 @@ class MyApp extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.business_center),label: 'Business'),
           BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search')
-        ],)
+        ],),
         
+        drawer: Drawer(
+          child: Center(child: Text("Hello from Drawer",style: TextStyle(fontSize: 20),),),
+        ),
 
         //====================================
         // Stack(

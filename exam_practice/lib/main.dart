@@ -12,25 +12,33 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Colors.indigo,
           title:const Text("Exam Practice")
         ),
-        body:
-        Stack(
-          children: [
-            Image.network('https://stall.pk/wp-content/uploads/2022/03/iphone-5s-Pakistan-stall.pk_.png'),
-            Positioned(
-              child: 
-                ElevatedButton(
-                  onPressed: (){}, 
-                  child: Text("Buy iPhone 5s"),
-                ),
-                top: 420,
-                left: 240,
-              ),
+        floatingActionButton: FloatingActionButton(onPressed:(){}, child: const Icon(Icons.add),),
+        bottomNavigationBar: BottomNavigationBar(items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.business_center),label: 'Business'),
+          BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search')
+        ],)
+        
+
+        //====================================
+        // Stack(
+        //   children: [
+        //     Image.network('https://stall.pk/wp-content/uploads/2022/03/iphone-5s-Pakistan-stall.pk_.png'),
+        //     Positioned(
+        //       child: 
+        //         ElevatedButton(
+        //           onPressed: (){}, 
+        //           child: Text("Buy iPhone 5s"),
+        //         ),
+        //         top: 420,
+        //         left: 240,
+        //       ),
             
-          ],
-        )
+        //   ],
+        // )
 
         //========================== 
         // Column(

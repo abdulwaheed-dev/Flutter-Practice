@@ -15,17 +15,73 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.indigo,
           title:const Text("Exam Practice")
         ),
-        floatingActionButton: FloatingActionButton(onPressed:(){}, child: const Icon(Icons.add),),
-        bottomNavigationBar: BottomNavigationBar(items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.business_center),label: 'Business'),
-          BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search')
-        ],),
+        // floatingActionButton: FloatingActionButton(onPressed:(){}, child: const Icon(Icons.add),),
+        // bottomNavigationBar: BottomNavigationBar(items: const [
+        //   BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+        //   BottomNavigationBarItem(icon: Icon(Icons.business_center),label: 'Business'),
+        //   BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search')
+        // ],),
         
-        drawer: Drawer(
-          child: Center(child: Text("Hello from Drawer",style: TextStyle(fontSize: 20),),),
-        ),
+        // drawer: const Drawer(
+        //   child: Center(child: Text("Hello from Drawer",style: TextStyle(fontSize: 20),),),
+        // ),
 
+        body: ListView(
+          scrollDirection: Axis.vertical,
+          addAutomaticKeepAlives: false,
+          children: [
+            Container(
+              color: Colors.red,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.blue,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.orange,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.black,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.green,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.red,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.blue,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.orange,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.black,
+              width: 200,
+              height: 200,
+            ),
+            Container(
+              color: Colors.green,
+              width: 200,
+              height: 200,
+            )
+          ],
+        ),
         //====================================
         // Stack(
         //   children: [

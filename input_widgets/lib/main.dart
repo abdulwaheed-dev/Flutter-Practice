@@ -68,11 +68,11 @@ class MyHomePage extends StatelessWidget {
           //maxLength: 20, //change the maximun input length
           decoration: InputDecoration(
             border:OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
-            labelText: "Username"
+            labelText: "Password"
           ),
           ),
 
-          TextButton(
+          ElevatedButton(
             onPressed: ()
               {
                 //if(userController.text == "Waheed"){
@@ -97,7 +97,7 @@ class welcomeScreen extends StatelessWidget{
    return Scaffold(
     appBar: AppBar(title: const Text("Login Sucessful"),),
     body: Center(
-      child: Text("Welcome Mr. $username",),
+      child: Text("Welcome Mr. $username", style: TextStyle(fontSize: 20),),
     ),
    );
   }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "115530051860",
+    "project_id": "waheedproject-e1acd",
+    "storage_bucket": "waheedproject-e1acd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115530051860:android:e56ab33f40af8799ca1201",
+        "android_client_info": {
+          "package_name": "com.example.new_screen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115530051860-mlb34nu8edo5uuqrlg6vn28gf72pnq6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4zoGnlUeDYmDti95AeBcJiyXrG0aBYXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115530051860-mlb34nu8edo5uuqrlg6vn28gf72pnq6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

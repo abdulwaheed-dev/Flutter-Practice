@@ -6,3 +6,5 @@
 ## :arrow_right: [basic_widgets](https://github.com/abdulwaheedchachar/Flutter-Practice/tree/main/basic_widgets)
 ## :arrow_right: [input_widgets](https://github.com/abdulwaheedchachar/Flutter-Practice/tree/main/input_widgets)
 ## :arrow_right: [stateful_widget](https://github.com/abdulwaheedchachar/Flutter-Practice/tree/main/stateful_widget)
+## :arrow_right: [practice](https://github.com/abdulwaheedchachar/Flutter-Practice/tree/main/new_screen)
+## :arrow_right: [exam_practice](https://github.com/abdulwaheedchachar/Flutter-Practice/tree/main/exam_practice)
